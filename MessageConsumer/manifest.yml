@@ -1,0 +1,11 @@
+---
+applications:
+ - name: message_consumer_igc_new
+   instances: 1
+   path: ./target/MessageConsumer-0.0.1-SNAPSHOT.jar
+   memory: 400m
+   env:
+    JAVA_OPTS: '-XX:MaxMetaspaceSize=80780K -Xss512k -Xmx200M -XX:ReservedCodeCacheSize=16M -XX:MaxDirectMemorySize=16M'
+   services:
+    - my_default
+    - my-instance
